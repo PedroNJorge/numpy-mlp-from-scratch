@@ -41,8 +41,9 @@ We will be using standard theoretical dimensions for the tensors:
 ### Forward Pass
 ```mermaid
 graph LR
-  A[a^(k-1)] --> B[Linear Layer: W^(k), b^(k)]
-  B --> C[z^(k) = W^(k)a^(k-1) + b^(k)]
-  C --> D[Activation σ]
-  D --> E[a^(k) = σ(z^(k))]
+  X:::invisible -->|"a^(k-1)"| A["Linear Layer: W(k), b(k)"]
+  A --> |"z^(k)"| B["Activation σ"]
+  B --> |"a^(k)"| Y:::invisible
+
+  classDef invisible fill:none,stroke:none,color:white;
 ```
