@@ -4,6 +4,15 @@ mathjax: true
 ---
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
 
 # Backpropagation in Neural Networks
 *A Mathematical Derivation and Implementation Notes*
@@ -14,6 +23,12 @@ It efficiently computes gradients of the loss function with respect to each weig
 This document derives the math step-by-step and links it to the implementation in this project.
 
 ### Notation
-$\mathcal{L}$: Loss Function
-$a^{(L)}$ be the output<br>
-$W \in \mathbb{R}^{n \times m}$
+* $\mathcal{L}$: Loss function (e.g., MSE, Cross-Entropy).
+* $a^{(k)}$: Activation at layer $k$ (e.g., $a^{(k)} = ReLU(z^{(k)})$).
+* $y$: True label, $a^{(L)}$: Predicted output.
+* $W^{(k)}$: Weight matrix for layer $k$ (dimensions $n \times m$).
+* $b^{(k)}$: Bias vector for layer $k$.
+* $z^{(k)}$: Pre-activation at layer $k$ ($z^{(k)} = W^{(k)}a^{(k-1)} + b^{(k)}$).
+* $\sigma$: Activation function (e.g., ReLU, Sigmoid).
+* $\odot$: Element-wise (Hadamard) product.
+
