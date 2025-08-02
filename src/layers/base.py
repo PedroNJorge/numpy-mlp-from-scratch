@@ -8,3 +8,7 @@ class Layer(ABC):
     @abstractmethod
     def forward(self, inputs: np.ndarray) -> np.ndarray:
         pass
+
+    @abstractmethod
+    def backward(self, inputs: np.ndarray) -> np.ndarray:
+        pass
