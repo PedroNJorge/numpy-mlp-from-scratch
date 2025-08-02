@@ -26,9 +26,16 @@ This document derives the math step-by-step and links it to the implementation i
 * $\mathcal{L}$: Loss function (e.g., MSE, Cross-Entropy).
 * $a^{(k)}$: Activation at layer $k$ (e.g., $a^{(k)} = ReLU(z^{(k)})$).
 * $y$: True label, $a^{(L)}$: Predicted output.
-* $W^{(k)}$: Weight matrix for layer $k$ (dimensions $n \times m$).
+* $W^{(k)}$: Weight matrix for layer $k$.
 * $b^{(k)}$: Bias vector for layer $k$.
 * $z^{(k)}$: Pre-activation at layer $k$ ($z^{(k)} = W^{(k)}a^{(k-1)} + b^{(k)}$).
 * $\sigma$: Activation function (e.g., ReLU, Sigmoid).
 * $\odot$: Element-wise (Hadamard) product.
 
+We will be using standard theoretical dimensions for the tensors:
+* $a^{(k)} \in \mathbb{R}^{n \times 1}$
+* $W^{(k)} \in \mathbb{R}^{m \times n}$
+* $b^{(k)} \in \mathbb{R}^{m \times 1}$
+
+## 2. Derivation of Backpropagation
+### Forward Pass
