@@ -62,7 +62,7 @@ $$
 ```mermaid
 graph RL
   X:::invisible -->|"∂L/∂a(k)"| B["Activation σ"]
-  B -->|"∂L/∂z(k)"| A["Linear Layer"]
+  B -->|"δ(k)"| A["Linear Layer"]
   A -->|"∂L/∂a(k-1)"| Y:::invisible
 
   classDef invisible fill:none,stroke:none,color:white;
