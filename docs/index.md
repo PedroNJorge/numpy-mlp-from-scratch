@@ -39,3 +39,10 @@ We will be using standard theoretical dimensions for the tensors:
 
 ## 2. Derivation of Backpropagation
 ### Forward Pass
+```mermaid
+graph LR
+  A[a^(k-1)] --> B[Linear Layer: W^(k), b^(k)]
+  B --> C[z^(k) = W^(k)a^(k-1) + b^(k)]
+  C --> D[Activation σ]
+  D --> E[a^(k) = σ(z^(k))]
+```
