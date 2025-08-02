@@ -1,5 +1,5 @@
 ---
-title: "Backpropagation Derivation"
+title: "Backpropagation in Neural Networks"
 mathjax: true
 ---
 <!-- Load Mermaid.js -->
@@ -18,10 +18,9 @@ mathjax: true
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 
 
-# Backpropagation in Neural Networks
 *A Mathematical Derivation and Implementation Notes*
 
-## 1. Introduction
+## **1. Introduction**
 Backpropagation is the cornerstone algorithm for training neural networks.
 It efficiently computes gradients of the loss function with respect to each weight by applying the chain rule of calculus.
 This document derives the math step-by-step and links it to the implementation in this project.
@@ -67,3 +66,5 @@ graph RL
 
   classDef invisible fill:none,stroke:none,color:white;
 ```
+
+Let
