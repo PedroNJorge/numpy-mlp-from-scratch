@@ -1,5 +1,6 @@
 title: NumPy MLP from scratch
 theme: minima
 markdown: kramdown
+keep_scripts: true
 plugins:
   - jekyll-feed
