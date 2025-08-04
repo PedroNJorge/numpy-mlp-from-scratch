@@ -54,6 +54,7 @@ graph LR
   <img src="assets/forward.svg" alt="Neural Network Layer">
   <figcaption>Foward Pass throught Neural Network Layer</figcaption>
 </figure>
+<br> 
 
 \begin{aligned}
 z^{(k)} &= W^{(k)}a^{(k-1)} + b^{(k)} \\
