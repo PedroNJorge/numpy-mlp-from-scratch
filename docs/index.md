@@ -50,16 +50,22 @@ graph LR
 
   classDef invisible fill:none,stroke:none,color:white;
 ```
-<figure style="text-align: center;">
-  <img src="assets/forward.svg" alt="Neural Network Layer">
-  <figcaption>Foward Pass throught Neural Network Layer</figcaption>
-</figure>
+<div style="display: flex; justify-content: center;">
+  <figure style="margin: 0;">
+    <img src="assets/forward.svg" alt="Neural Network Layer">
+    <figcaption style="text-align: center;">
+  <figcaption>Forward Pass through Neural Network Layer</figcaption>
+</figcaption>
+  </figure>
+</div>
 <br> 
 
+$$
 \begin{aligned}
 z^{(k)} &= W^{(k)}a^{(k-1)} + b^{(k)} \\
 a^{(k)} &= \sigma(z^{(k)})
 \end{aligned}
+$$
 
 ### **Backward Pass**
 ```mermaid
