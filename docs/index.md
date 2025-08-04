@@ -50,7 +50,7 @@ graph LR
 
   classDef invisible fill:none,stroke:none,color:white;
 ```
-![Forward Pass](https://github.com/user-attachments/assets/9f28e73b-1138-4cc8-bccb-6b479ef60dd3)
+![Forward Pass](assets/forward.svg)
 $$
 \begin{aligned}
 z^{(k)} &= W^{(k)}a^{(k-1)} + b^{(k)} \\
