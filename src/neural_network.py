@@ -18,6 +18,11 @@ class NeuralNetwork:
         for layer in reversed(self.layers):
             delta = layer.backward(delta)
 
+    def update(self, lr: float):
+        """Updates weights after backward()."""
+        for layer in self.layers:
+            layer.update(lr)
+
     def train(self, X: np.ndarray, y: np.ndarray, lr: float, epochs: int):
         """Full training loop with loss integration."""
         pbar = tqdm(range(1, epochs + 1), desc="Training")
@@ -31,5 +36,8 @@ class NeuralNetwork:
 
             # Backward pass
             self.backward(delta)
+
+            # Stochastic Gradient Descent
+            self.update(lr)
 
             pbar.set_postfix({"Loss": f"{L:.4f}"})

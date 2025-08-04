@@ -12,3 +12,7 @@ class Layer(ABC):
     @abstractmethod
     def backward(self, inputs: np.ndarray) -> np.ndarray:
         pass
+
+    @abstractmethod
+    def update(self, lr: float):
+        pass
