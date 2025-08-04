@@ -50,13 +50,15 @@ graph LR
 
   classDef invisible fill:none,stroke:none,color:white;
 ```
-![Forward Pass](assets/forward.svg)
-$$
+<figure style="text-align: center;">
+  <img src="assets/forward.svg" alt="Neural Network Layer">
+  <figcaption>Foward Pass throught Neural Network Layer</figcaption>
+</figure>
+
 \begin{aligned}
 z^{(k)} &= W^{(k)}a^{(k-1)} + b^{(k)} \\
 a^{(k)} &= \sigma(z^{(k)})
 \end{aligned}
-$$
 
 ### **Backward Pass**
 ```mermaid
