@@ -76,5 +76,15 @@ graph RL
 
   classDef invisible fill:none,stroke:none,color:white;
 ```
+<div style="display: flex; justify-content: center;">
+  <figure style="margin: 0;">
+    <img src="assets/backward.svg" alt="Neural Network Layer">
+    <figcaption style="text-align: center;">
+  <figcaption>Backward Pass through Neural Network Layer</figcaption>
+</figcaption>
+  </figure>
+</div>
+<br> 
+
 
 Let
