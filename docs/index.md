@@ -42,19 +42,12 @@ We will be using standard theoretical dimensions for the tensors:
 
 ## **2. Derivation of Backpropagation**
 ### **Forward Pass**
-```mermaid
-graph LR
-  X:::invisible -->|"a(k-1)"| A["Linear Layer: W(k), b(k)"]
-  A --> |"z(k)"| B["Activation σ"]
-  B --> |"a(k)"| Y:::invisible
 
-  classDef invisible fill:none,stroke:none,color:white;
-```
 <div style="display: flex; justify-content: center;">
   <figure style="margin: 0;">
     <img src="assets/forward.svg" alt="Neural Network Layer">
     <figcaption style="text-align: center;">
-  <figcaption>Forward Pass through Neural Network Layer</figcaption>
+  <figcaption>Fig. 2.1. - Forward Pass through Neural Network Layer</figcaption>
 </figcaption>
   </figure>
 </div>
@@ -68,19 +61,12 @@ a^{(k)} &= \sigma(z^{(k)})
 $$
 
 ### **Backward Pass**
-```mermaid
-graph RL
-  X:::invisible -->|"∂L/∂a(k)"| B["Activation σ"]
-  B -->|"δ(k)"| A["Linear Layer"]
-  A -->|"∂L/∂a(k-1)"| Y:::invisible
 
-  classDef invisible fill:none,stroke:none,color:white;
-```
 <div style="display: flex; justify-content: center;">
   <figure style="margin: 0;">
     <img src="assets/backward.svg" alt="Neural Network Layer">
     <figcaption style="text-align: center;">
-  <figcaption>Backward Pass through Neural Network Layer</figcaption>
+  <figcaption>Fig. 2.2. - Backward Pass through Neural Network Layer</figcaption>
 </figcaption>
   </figure>
 </div>
