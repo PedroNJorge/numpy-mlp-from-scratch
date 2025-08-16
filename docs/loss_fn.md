@@ -1,5 +1,5 @@
 ---
-title: "Backpropagation in Neural Networks"
+title: "Loss Functions"
 mathjax: true
 ---
 <!-- Load Mermaid.js -->
