@@ -23,40 +23,47 @@ mathjax: true
 Each explanation provides the **definition**, **derivative** and **code**.
 It will be provided a **Scalar Form and Vectorized Form** for each function, but when
 making further calculations, the later will be used because of it's easier usage.
-It is recommended to first read 'Backpropagation in Neural Networks', since it provides deep insights
-on the reason behind the need to use these type of functions and the calculation of $\dfrac{\partial \mathcal{L}}{\partial a^{(k)}}$
 
 To put it simply, a loss function is a function that produces a scalar as an output,
-quantifying "how wrong" the model is on a set of data. As you can imagine,
-there are a variety of different losses, each with their own purpose. The categories of loss functions aborded
-in this document are **Regression and Classification**.
+quantifying "how wrong" the model is on a set of data. More formally:
+
+$$
+\begin{aligned}
+Batch Loss \mathcal{L}: \mathbb{R}^{m \times K} \times \mathbb{R}^{m \times K} \rightarrow \mathbb{R} \\
+Per-Example Loss \mathcal{L}_i: \mathbb{R}^{n} \rightarrow \mathbb{R} \\
+\mathcal{L}(\mathbf{\hat{Y}}, \mathbf{Y}) &= \frac{1}{m} \sum_{i=1}^{m} \mathcal{L}_i(\mathbf{\hat{y}}_i, \mathbf{y}_i)
+\end{aligned}
+$$
+
+Where:
+* $m$: Batch size (number of samples in the current batch).
+* $K$: Number of classes (output dimension for classification).
+* $\mathbf{Y}$: Target matrix of shape $(m, K)$.
+* $\mathbf{\hat{Y}}$: Prediction matrix of shape $(m, K)$. For Neural Networks, $\mathbf{\hat{Y}} = \mathbf{a^{(L)}}$.
+* $\mathbf{y}_i$, $\mathbf{\hat{y}}_i$: The target and prediction vectors for the $i$-th sample (rows from $\mathbf{Y}$ and $\mathbf{\hat{Y}}$).
+
+We can interpret this as a general definition followed by every loss function with $\mathcal{L}$ being the **batch loss**, i.e., the average loss over all examples,
+and $\mathcal{L}_i$ the **per-example loss**.
+
+As you can imagine, there are a variety of different losses, each with their own purpose.
+The categories of loss functions covered in this document are **Regression and Classification**.
 
 ## **Regression**
 These loss functions are used...
 
 ### **Mean Squared Error (MSE)**
-The MSE loss function can be defined as the following:
-$$
-\begin{aligned}
-Without Batches &= W^{(k)}a^{(k-1)} + b^{(k)} \\
-With Batch &= \sigma(z^{(k)}) \\
-Vectorized &= 
-\end{aligned}
-$$
 
 
 ## **Classification**
 
 ### **Binary-Cross Entropy (BCE)**
-The BCE takes as input $a^{(L)}$ (or $\hat{y}$) and $y$, both in $\mathbb{R}^{b \times 1}$,
-where $b$ is the **batch size**. Note that $a^{(L)}$ is the predicted probability and $y$ the true label.
+The BCE loss function is used when... ($\mathbf{\hat{Y}}$ is a predicted probability).
 
-#### Definition
-
+#### **Definition**
 The BCE loss is computed as:
 $$
 \begin{aligned}
-BCE &= -\frac{1}{b}\sum_{i=1}^{b} \left[y_i \log(a^{(L)}_i) + (1 - y_i) \log(1 - a^{(L)}_i)\right]
+BCE(\mathbf{\hat{Y}}, \mathbf{Y}) &= -\frac{1}{m}\sum_{i=1}^{m} \left[y_i \log(a^{(L)}_i) + (1 - y_i) \log(1 - a^{(L)}_i)\right]
 \end{aligned}
 $$
 
@@ -67,7 +74,7 @@ BCE &= -\frac{1}{b} \left[y_i \odot \log(a^{(L)}_i) + (1 - y_i) \odot \log(1 - a
 \end{aligned}
 $$
 
-#### Derivative
+#### **Gradient of Loss**
 
 Let's calculate it's partial derivative w.r.t. $a^{(L)}$:
 $$
